@@ -25,7 +25,7 @@ pipeline {
 
         stage('stage 2') {
             steps {
-                sh 'echo hello from stage 2!'
+                oc create deployment  subrata --image quay.io/mayank123modi/mayanknginximage
             }
         }
 
@@ -39,7 +39,7 @@ pipeline {
 
         stage('stage 3') {
             steps {
-                sh 'echo hello from stage 3!. This is the last stage...'
+                oc expose  deployment  subrata   --port 80
             }
         }
 
