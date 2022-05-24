@@ -40,6 +40,7 @@ pipeline {
         stage('stage 3') {
             steps {
                 sh 'oc expose  deployment  subrata   --port 80'
+                sh 'oc expose svc subrata'
             }
         }
 
