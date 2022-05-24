@@ -25,7 +25,7 @@ pipeline {
 
         stage('stage 2') {
             steps {
-                oc create deployment  subrata --image quay.io/mayank123modi/mayanknginximage
+                sh 'oc create deployment  subrata --image quay.io/mayank123modi/mayanknginximage'
             }
         }
 
@@ -39,7 +39,7 @@ pipeline {
 
         stage('stage 3') {
             steps {
-                oc expose  deployment  subrata   --port 80
+                sh 'oc expose  deployment  subrata   --port 80'
             }
         }
 
